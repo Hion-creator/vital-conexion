@@ -32,27 +32,29 @@ const Login = ({ setRole }) => {
   };
 
   return (
-    <div className="h-screen flex flex-col justify-center items-center bg-gray-100">
-      <h2 className="text-2xl font-bold">Bienvenido!</h2>
+    <div className="static h-screen flex flex-col justify-center items-center bg-cover bg-[url('/src/img/circulos.svg')]">
+      <h2 className="text-2xl">Bienvenido!</h2>
+      <img src="/logo1.png" className="md:absolute bottom-0 left-0" alt="logo" />
       {error && <p className="text-red-500">{error}</p>}
-      <form onSubmit={handleSubmit} className="mt-4">
+      <form onSubmit={handleSubmit} className="mt-4 w-80">
         <input
           type="email"
           placeholder="Ingresa tu email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          className="block w-full mt-2 p-2 border rounded"
+          className="block w-full mt-2 pl-4 py-2 border rounded-full"
         />
         <input
           type="password"
           placeholder="Ingresa tu contraseña"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-          className="block w-full mt-2 p-2 border rounded"
+          className="block w-full mt-4 pl-4 py-2 border rounded-full"
         />
-        <button type="submit" className="mt-4 px-4 py-2 bg-blue-500 text-white rounded">Iniciar</button>
+        <button type="submit" className="mt-12 px-4 py-2 w-full bg-cyan-400 hover:bg-cyan-500 text-white rounded">Iniciar</button>
       </form>
-      <button onClick={() => navigate('/register')} className="mt-4 text-blue-500">Crear cuenta</button>
+      <p>no tienes una cuenta
+      <button onClick={() => navigate('/register')} className="mt-4 pl-2 text-cyan-500">Crear cuenta</button></p>
     </div>
   );
 };
